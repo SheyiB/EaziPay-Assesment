@@ -1,1 +1,5 @@
 node_modules/
+
+AuthGraphQLService/node_modules/
+
+DataSchemaService/node_modules/
