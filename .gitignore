@@ -5,3 +5,5 @@ AuthGraphQLService/node_modules/
 AuthGraphQLService/config/.env
 
 DataSchemaService/node_modules/
+
+resources/
