@@ -7,6 +7,7 @@ const typeDefs = require('./schema')
 const resolvers = require('./resolver/index')
 const db = require('../config/db')
 const userModel = require('./model')
+const jwt = require('jsonwebtoken');
 
 dotenv.config({ path: './config/.env'})
 
@@ -14,11 +15,27 @@ app.use(express.json())
 
 db();
 
+
+const getUser = token => {
+    if (token){
+        try{
+            return jwt.verify(token, process.env.JWT_SECRET);
+        }
+        catch (err) {
+            throw new Error('Session invalid');
+        }
+    }
+}
+
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context: () => {
-        return {userModel};
+    context: ({ req }) => {
+        const token = req.headers.authorization;
+
+        const user = getUser(token);
+
+        return {userModel, user};
     }
 })
 
