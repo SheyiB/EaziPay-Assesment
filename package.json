@@ -1,5 +1,9 @@
 {
   "name": "eazipay",
+  "type": "module",
+  "workspaces" : [
+    "packages/*"
+  ],
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

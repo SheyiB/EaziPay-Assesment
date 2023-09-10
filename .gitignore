@@ -1,9 +1,15 @@
 node_modules/
 
-AuthGraphQLService/node_modules/
+auth-server/node_modules/
 
-AuthGraphQLService/config/.env
+auth-server/config/.env
 
-DataSchemaService/node_modules/
+schema-server/node_modules/
+
+packages/auth-server/node_modules/
+
+packages/auth-server/config/.env
+
+packages/schema-server/node_modules/
 
 resources/
