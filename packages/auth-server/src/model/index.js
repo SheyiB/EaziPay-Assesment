@@ -1,4 +1,4 @@
-const User = require('./user');
+const {User} = require('schema-server/src/model')
 
 const models = {
     User

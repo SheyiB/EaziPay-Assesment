@@ -3,17 +3,19 @@ const express = require('express')
 const app = express()
 const dotenv = require('dotenv')
 const { ApolloServer} = require('apollo-server-express')
-const typeDefs = require('./schema')
+const typeDefs = require('schema-server/src/schema')
+
 const resolvers = require('./resolver/index')
-const db = require('../config/db')
+const connectDB = require('schema-server/config/db')
 const userModel = require('./model')
 const jwt = require('jsonwebtoken');
+
 
 dotenv.config({ path: './config/.env'})
 
 app.use(express.json())
 
-db();
+connectDB()
 
 
 const getUser = token => {
