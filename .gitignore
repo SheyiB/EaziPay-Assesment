@@ -12,4 +12,6 @@ packages/auth-server/config/.env
 
 packages/schema-server/node_modules/
 
+packages/schema-server/config/.env
+
 resources/
