@@ -1,18 +1,17 @@
 const express = require('express')
 
 const app = express()
-const dotenv = require('dotenv')
-const connectDB = require('./config/db')
 
-dotenv.config({ path: './config/.env'})
+const connectDB = require('../config/db')
+
 
 app.use(express.json())
 
 connectDB()
 
-app.get('/', (req, res) => res.send('Welcome to the Schema Server!'))
+app.get('/', (req, res) => res.status(200).send('Welcome to the Schema Server!'))
 
-const PORT = process.env.PORT
+const PORT = 8089
 
 app.listen(PORT, ()=>{
     console.log(`App Running on PORT : ${PORT}`)
